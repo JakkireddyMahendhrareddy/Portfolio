@@ -8,7 +8,7 @@ const Contact = () => {
         {/* Left Side: Contact Info */}
         <div>
           <h2 className="text-3xl font-bold text-white mb-4">
-            Let's <span className="text-blue-400">Work Together</span>
+            Let's <span className="text-green-400">Work Together</span>
           </h2>
           <p className="text-gray-400 mb-6">
             "Let's collaborate to create something amazing! Feel free to reach
@@ -17,7 +17,7 @@ const Contact = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <Phone className="text-green-400 w-6 h-6" />
-              <p>(+91) 7569850711</p>
+              <p>(+91) 7569850712</p>
             </div>
             <div className="flex items-center gap-4">
               <Mail className="text-green-400 w-6 h-6" />
@@ -25,7 +25,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-4">
               <MapPin className="text-green-400 w-6 h-6" />
-              <p>123 Anywhere Street, Any City</p>
+              <p>Hyderabad, Telegana State</p>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Contact = () => {
               />
               <input
                 type="text"
-                placeholder="Email Subject"
+                placeholder="Company"
                 className="w-full p-3 bg-gray-700 text-white rounded-md outline-none focus:ring-2 focus:ring-green-400"
               />
             </div>
