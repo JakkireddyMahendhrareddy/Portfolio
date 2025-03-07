@@ -13,7 +13,7 @@ const projects = [
       "image": "https://media-hosting.imagekit.io//53745067ce0747b5/youtube.PNG?Expires=1835948983&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=t6NRaEmoPDl04pzUwAXKcBY7L2JlfHLWTJTJEV3k59fulvucHv7nAB0Cw5qaHoTYn0ORB3-~4zy46rlou0BVkdyO7Hwnr7LClBbaGhnMEf7C1JC6PEnZwMSO99PhKbpw9g7oKZVThzGsJS8O7a8AmWIio4DvZL7mzkb9TOCWousU~lQ1UfdVWVJzdPKlSt-vwhfDRlwEg27r4osMt2oF5zLeoLC-EUsxgh6yzH-P32eoIXiuL~WxE9r5~u~McS0SUknyL-o3WXNYEn8rp41qcE687SrjutlUd2jOOhqa~~bdC-WYohGCt78EZb65lbpLiGrv7J2syr05aD1A2cbz2g__",
       "title": "YouTube Clone",
       "description": "A YouTube-like video-sharing platform with search and recommendations.",
-      "technologies": "Vue.js, Node.js, PostgreSQL"
+      "technologies": "React.js, Node.js, PostgreSQL"
     },
     {
       "image": "https://media-hosting.imagekit.io//1ca7b253b44542db/Capture.PNG?Expires=1835948188&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0piJ3P1Z06H8HjtQ5ZvZWx007yTR8CztOVWqlsGwaWg5mE11UaUT~iEL3EEkYTDwmb~S-JHjk6UV7DNymd8L5e55NwmaNJa6~YCiAAr19WWmSqzb19Xuxf0TMWxehiEzrbEOIyILheVz9aRd4gL-cymRmQt~5D299GucaTYvwQeLWgmJFj8ctH6xuathutowfSIVnl7J8FeIVIHEbv4ieVJuzFfdp72NlGzhjeyzDbB~xQ0SL52WF5eHjEHoVJzJV433ix3JWr-SnJXgvLu-u4XNEEJXBV1RF5A8aHG~FAI4-nxFrpMZwXBqzEpGVB9mBOco6zP4oOp8qR-E4AWJtQ__",
