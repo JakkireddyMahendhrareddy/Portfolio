@@ -14,38 +14,31 @@ const services = [
     icon: <FaCode />,
     color: "border-green-500",
     hoverColor: "hover:bg-gray-500",
+    description: "Building responsive and high-performance websites using the latest web technologies, ensuring seamless user experience and functionality."
   },
   {
     title: "UI/UX Design",
     icon: <FaPencilRuler />,
     color: "border-green-400",
     hoverColor: "hover:bg-gray-400",
-  },
-  {
-    title: "Graphic Design",
-    icon: <FaPaintBrush />,
-    color: "border-green-400",
-    hoverColor: "hover:bg-gray-400",
-  },
-  {
-    title: "SEO",
-    icon: <FaSearch />,
-    color: "border-green-400",
-    hoverColor: "hover:bg-gray-400",
+    description: "Designing intuitive and visually appealing user interfaces that enhance user engagement and provide a smooth digital experience."
   },
   {
     title: "Video Editing",
     icon: <FaVideo />,
     color: "border-green-400",
     hoverColor: "hover:bg-gray-400",
+    description: "Creating professional and engaging video content with smooth transitions, effects, and storytelling to captivate your audience."
   },
   {
     title: "Photography",
     icon: <FaCamera />,
     color: "border-green-400",
     hoverColor: "hover:bg-gray-400",
-  },
+    description: "Capturing high-quality images that tell a story, with a keen eye for detail, lighting, and composition for stunning visuals."
+  }
 ];
+
 
 const Services = () => {
   return (
@@ -56,7 +49,7 @@ const Services = () => {
       </h2>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 max-w-5xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 w-11/12 max-w-5xl">
         {services.map((service, index) => (
           <div
             key={index}
@@ -67,10 +60,7 @@ const Services = () => {
             {/* Title */}
             <h3 className="text-lg font-semibold">{service.title}</h3>
             {/* Description */}
-            <p className="text-sm mt-2 opacity-70">
-              "I am Mahireddy, a passionate developer specializing in web
-              development, UI/UX design, and digital creativity, offering SEO,
-              video editing, and photography services."
+            <p className="text-sm mt-2 opacity-70">{service.description}
             </p>
           </div>
         ))}

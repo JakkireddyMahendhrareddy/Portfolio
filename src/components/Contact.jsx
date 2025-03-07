@@ -1,88 +1,3 @@
-// import React from "react";
-// import { Mail, Phone, MapPin } from "lucide-react"; // Importing icons
-
-// const Contact = () => {
-//   return (
-//     <section className="bg-black min-h-screen text-white flex justify-center items-center py-16 px-6">
-//       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8">
-//         {/* Left Side: Contact Info */}
-//         <div>
-//           <h2 className="text-3xl font-bold text-white mb-4">
-//             Let's <span className="text-green-400">Work Together</span>
-//           </h2>
-//           <p className="text-gray-400 mb-6">
-//             "Let's collaborate to create something amazing! Feel free to reach
-//             out for any projects, inquiries, or just to say hello."
-//           </p>
-//           <div className="space-y-4">
-//             <div className="flex items-center gap-4">
-//               <Phone className="text-green-400 w-6 h-6" />
-//               <p>(+91) 7569850712</p>
-//             </div>
-//             <div className="flex items-center gap-4">
-//               <Mail className="text-green-400 w-6 h-6" />
-//               <p>jakkireddymahendrareddy@gmail.com</p>
-//             </div>
-//             <div className="flex items-center gap-4">
-//               <MapPin className="text-green-400 w-6 h-6" />
-//               <p>Hyderabad, Telegana State</p>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Right Side: Contact Form */}
-//         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-//           <h3 className="text-2xl font-bold text-white mb-4">
-//             Contact <span className="text-green-400">Me!</span>
-//           </h3>
-//           <form className="space-y-4">
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-//               <input
-//                 type="text"
-//                 placeholder="Full Name"
-//                 className="w-full p-3 bg-gray-700 text-white rounded-md outline-none focus:ring-2 focus:ring-green-400"
-//               />
-//               <input
-//                 type="email"
-//                 placeholder="Email Address"
-//                 className="w-full p-3 bg-gray-700 text-white rounded-md outline-none focus:ring-2 focus:ring-green-400"
-//               />
-//             </div>
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-//               <input
-//                 type="text"
-//                 placeholder="Phone Number"
-//                 className="w-full p-3 bg-gray-700 text-white rounded-md outline-none focus:ring-2 focus:ring-green-400"
-//               />
-//               <input
-//                 type="text"
-//                 placeholder="Company"
-//                 className="w-full p-3 bg-gray-700 text-white rounded-md outline-none focus:ring-2 focus:ring-green-400"
-//               />
-//             </div>
-//             <textarea
-//               placeholder="Your Message"
-//               rows="4"
-//               className="w-full p-3 bg-gray-700 text-white rounded-md outline-none focus:ring-2 focus:ring-green-400"
-//             ></textarea>
-//             <button
-//               type="submit"
-//               className="w-full bg-green-500 text-black font-bold py-3 rounded-md hover:bg-green-600 transition"
-//             >
-//               Send Message
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Contact;
-
-
-
-
 import React, { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import ThanksCard from "../Routes/ThanksCard.jsx";
@@ -118,36 +33,27 @@ const Contact = () => {
       return;
     }
 
-    // WhatsApp Number to Receive Message (Your Number)
-    const whatsappNumber = "917569850712"; // Replace with your WhatsApp number (Add country code without +)
-    
-    // Create WhatsApp Message
-    const whatsappMessage = `Hello, I received a new contact request!%0A
-      *Name:* ${name}%0A
-      *Email:* ${email}%0A
-      *Phone:* ${phone}%0A
-      *Company:* ${company ? company : "N/A"}%0A
-      *Message:* ${message}`;
-
-    // Open WhatsApp Chat with Pre-Filled Message
-    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
-
-    // Show ThanksCard
+    const whatsappNumber = "917569850712";
+    const whatsappMessage = `Hello, I received a new contact request!%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Company:* ${
+      company || "N/A"
+    }%0A*Message:* ${message}`;
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
+      "_blank"
+    );
     setSubmitted(true);
-
-    // Reset Form
     setFormData({ name: "", email: "", phone: "", company: "", message: "" });
   };
 
   return (
-    <section className="bg-black min-h-screen text-white flex justify-center items-center py-16 px-6">
+    <section className="bg-black min-h-screen text-white flex justify-center items-center py-12 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl w-full">
         {submitted ? (
           <ThanksCard setSubmitted={setSubmitted} />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Let's <span className="text-green-400">Work Together</span>
               </h2>
               <p className="text-gray-400 mb-6">
@@ -155,23 +61,31 @@ const Contact = () => {
                 reach out for any projects, inquiries, or just to say hello."
               </p>
               <div className="space-y-4">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3 text-lg">
                   <Phone className="text-green-400 w-6 h-6" />
-                  <p>(+91) 7569850712</p>
+                  <p className="break-all text-sm sm:text-base">
+                    (+91) 7569850712
+                  </p>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Mail className="text-green-400 w-6 h-6" />
-                  <p>jakkireddymahendrareddy@gmail.com</p>
+                <div className="flex items-center gap-3 text-lg flex-wrap">
+                  <Mail className="text-green-400 w-6 h-6 sm:w-5 sm:h-5" />
+                  <p className="break-all text-sm sm:text-base">
+                    jakkireddymahendrareddy@gmail.com
+                  </p>
                 </div>
-                <div className="flex items-center gap-4">
+
+                <div className="flex items-center gap-3 text-lg">
                   <MapPin className="text-green-400 w-6 h-6" />
-                  <p>"Located in Hyderabad, Telangana, India."</p>
+                  <p className="break-all text-sm sm:text-base">
+                    {" "}
+                    Located in Hyderabad, Telangana, India – Let’s connect and
+                    create something amazing!
+                  </p>
                 </div>
               </div>
             </div>
-
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <div className="bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold text-white mb-6">
                 Contact <span className="text-green-400">Me!</span>
               </h3>
               <form className="space-y-4" onSubmit={handleSubmit}>
@@ -208,7 +122,7 @@ const Contact = () => {
                   <input
                     type="text"
                     name="company"
-                    placeholder="Company"
+                    placeholder="Company (Optional)"
                     value={formData.company}
                     onChange={handleChange}
                     className="w-full p-3 bg-gray-700 text-white rounded-md outline-none focus:ring-2 focus:ring-green-400"
@@ -239,4 +153,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

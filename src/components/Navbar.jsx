@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import PortfolioLogo from "./PortfolioLogo";
@@ -7,7 +7,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  // Navbar titles based on the route
   const pageTitles = {
     "/": "Home",
     "/services": "Services",
@@ -16,11 +15,9 @@ const Navbar = () => {
     "/contact": "Contact",
   };
 
-  // Get the current page title
-
   return (
-    <nav className="bg-gray-900 text-white p-4 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-gray-900 text-white p-4 shadow-lg w-full">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8">
         <Link
           to="https://en.wikipedia.org/wiki/Portfolio"
           target="_blank"
@@ -30,12 +27,12 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-6 text-lg">
           {Object.keys(pageTitles).map((route) => (
             <li key={route}>
               <Link
                 to={route}
-                className={`hover:text-green-600 ${
+                className={`hover:text-green-400 transition-colors duration-300 ${
                   location.pathname === route ? "text-green-500 font-bold" : ""
                 }`}
               >
@@ -46,33 +43,38 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        <button
+          className="md:hidden focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-gray-800 p-4">
-          <ul className="space-y-4 text-center">
-            {Object.keys(pageTitles).map((route) => (
-              <li key={route}>
-                <Link
-                  to={route}
-                  className={`block py-2 hover:text-green-600 ${
-                    location.pathname === route
-                      ? "text-green-500 text-lg font-bold"
-                      : ""
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {pageTitles[route]}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div
+        className={`md:hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-50 flex flex-col items-center justify-center transition-transform transform ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+      >
+        <button
+          className="absolute top-5 right-5 text-white"
+          onClick={() => setIsOpen(false)}
+        >
+          <X size={32} />
+        </button>
+        <ul className="space-y-6 text-center text-2xl">
+          {Object.keys(pageTitles).map((route) => (
+            <li key={route}>
+              <Link
+                to={route}
+                className="block py-2 hover:text-green-400 transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                {pageTitles[route]}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
