@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Money from "../assets/Money.jpg";
-import emoji from "../assets/emoji.png";
-import youTube from "../assets/you-tube.png";
-import todoList from "../assets/todo-list.png";
-import hostel from "../assets/hostel.png";
+import emoji from "../assets/emoji.jpg";
+import youTube from "../assets/you-tube.jpg";
+import todoList from "../assets/todo-list.jpg";
+import hostel from "../assets/hostel.jpg";
 
 
 const projects = [
