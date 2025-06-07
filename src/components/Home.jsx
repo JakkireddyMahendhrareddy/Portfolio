@@ -52,7 +52,7 @@ const Home = () => {
               Download CV
             </a>
             <a
-              href="https://drive.google.com/file/d/1HgIp6SDromXzoshjpKcGTGIq_VkA_syp/view?usp=sharing"
+              href="https://drive.google.com/file/d/1-dPKuyarWxHT-muR-ymJ3pS2MYCQTirR/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 text-black px-5 py-2 rounded-full font-semibold text-sm sm:text-base md:text-lg hover:bg-white transition"

@@ -1,44 +1,49 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Money from "../assets/Money.jpg";
+import emoji from "../assets/emoji.png";
+import youTube from "../assets/you-tube.png";
+import todoList from "../assets/todo-list.png";
+import hostel from "../assets/hostel.png";
+
 
 const projects = [
   {
-    image:
-      "https://media-hosting.imagekit.io//f6e1d63e2595435c/hostel.PNG?Expires=1835948534&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=wSYIkkLBPMDBc7rTOaS9FmufORYzd3haIOVLKtg1KVkMkhkv5oclT3ZSOv1bcKQ~aTuVSRkns5jcJrzNySk3kdSrnNyL7XiwzH9QgjEkhz~NqNtbndnnAnZbW9nJpp1u1BwX~SF0Ty93owBU5PicjHXJy17FjmsAQsQ1s5Jqa4upK7egXNu4b1KNfnC0nn3V43qHDGHJXbjQxvgiNpzWyMq8YkmQM4JK4Q6JZr6R4RNh9735-qM7v1WPyxH0WmEPTSFIFdgEsbIKkwIKMxYAXA6MNUFFUGqnNjCNuWOoN1IhSBlpEfU2C1VkPBZI~6BpGZX9VVYlg~X4XlvRhu3cDw__",
+    image:hostel,
     title: "Hostel Management System",
-    description:
-      "A web-based hostel management application for students and administrators.",
-    technologies: "React.js, Firebase, Tailwind CSS",
+    description:"A web-based hostel management application designed to streamline operations for both students and administrators. It enables easy room booking, complaint registration, and student record management. The system ensures transparency, reduces paperwork, and enhances communication within the hostel.",
+    technologies: "React.js, Node js, Tailwind CSS",
+    link: "https://hms-frontend-ecru.vercel.app/",
   },
   {
-    image:
-      "https://media-hosting.imagekit.io//53745067ce0747b5/youtube.PNG?Expires=1835948983&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=t6NRaEmoPDl04pzUwAXKcBY7L2JlfHLWTJTJEV3k59fulvucHv7nAB0Cw5qaHoTYn0ORB3-~4zy46rlou0BVkdyO7Hwnr7LClBbaGhnMEf7C1JC6PEnZwMSO99PhKbpw9g7oKZVThzGsJS8O7a8AmWIio4DvZL7mzkb9TOCWousU~lQ1UfdVWVJzdPKlSt-vwhfDRlwEg27r4osMt2oF5zLeoLC-EUsxgh6yzH-P32eoIXiuL~WxE9r5~u~McS0SUknyL-o3WXNYEn8rp41qcE687SrjutlUd2jOOhqa~~bdC-WYohGCt78EZb65lbpLiGrv7J2syr05aD1A2cbz2g__",
+    image: youTube,
     title: "YouTube Clone",
     description:
-      "A YouTube-like video-sharing platform with search and recommendations.",
-    technologies: "React.js, Node.js, PostgreSQL",
+      "A YouTube-like video-sharing platform that allows users to browse, search, and watch videos with ease. It features real-time search functionality, dynamic video rendering, and intelligent recommendations based on user interests. Designed for smooth performance and an engaging user experience.",
+    technologies: "React.js, Tailwind CSS",
+    link: "https://m-tube-clone.vercel.app/",
   },
   {
-    image:
-      "https://media-hosting.imagekit.io//1ca7b253b44542db/Capture.PNG?Expires=1835948188&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0piJ3P1Z06H8HjtQ5ZvZWx007yTR8CztOVWqlsGwaWg5mE11UaUT~iEL3EEkYTDwmb~S-JHjk6UV7DNymd8L5e55NwmaNJa6~YCiAAr19WWmSqzb19Xuxf0TMWxehiEzrbEOIyILheVz9aRd4gL-cymRmQt~5D299GucaTYvwQeLWgmJFj8ctH6xuathutowfSIVnl7J8FeIVIHEbv4ieVJuzFfdp72NlGzhjeyzDbB~xQ0SL52WF5eHjEHoVJzJV433ix3JWr-SnJXgvLu-u4XNEEJXBV1RF5A8aHG~FAI4-nxFrpMZwXBqzEpGVB9mBOco6zP4oOp8qR-E4AWJtQ__",
-    title: "Admin Dashboard",
-    description: "A fully responsive Admin website with CRUD opertaion.",
-    technologies: "React.js, Tailwind CSS, Firebase",
+    image: Money,
+    title: "Money-Manager",
+    description: "A Money Manager application that helps users track expenses and income efficiently. It features secure login, easy-to-use forms for adding transactions, and the ability to export financial data for reporting. Ideal for personal budgeting and financial planning.",
+    technologies: "React.js, Tailwind CSS, Node.js",
+    link: "https://money-frontend-bice.vercel.app/",
   },
   {
-    image:
-      "https://media-hosting.imagekit.io//8df071ad554c41d8/emoji.PNG?Expires=1835948379&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=eC7GY~Eob0YEPpRmmUJkvWVp4vPP~UkQVTT0rYf7gMqY2OzuN2Se5bawVUBJoxHu~qVYYwCEcVG4tPefwgNuZsM1Z00y8nm-A1~cqBnFGfZq3~Jvukzq4b4W~lFexIa8xtMpu31EIYyqH8-AGGq75BrHF7M9ISxBXaKJgsvy~tV2GgDaiFi9dOZmxSLzQySYCbHNqAQ05Woli7amUoIHD4dTTMuxuBjI5ue14UsqS4Chls694FBYqTgRGfYURzhi2HnQ3iQBCbgfyPccTESkb0EUZof5HQqJ2atR7owFgPL2xhONTRbuJUHDzvF-nuS4dD53YGJGthjwTUfriig1Rw__",
+    image: emoji,
     title: "Emoji Chat App",
     description:
-      "A real-time chat application featuring custom emoji reactions.",
+      "An Emoji Chat App designed as a fun and interactive game that boosts creativity and cognitive skills. Users can engage in emoji-based conversations, enhancing both memory and pattern recognition. A great way to pass time while exercising the brain.",
     technologies: "React js,Html,Tailwind css",
+    link: "https://emoji-game-navy.vercel.app/",
   },
   {
-    image:
-      "https://media-hosting.imagekit.io//2143f6ce005344b3/fruits.PNG?Expires=1835948122&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aCHPSOXIw-2Pi5u00IbsH-GfFhCdBvTO4INMHYmJCzbNFq-yJcZkXNSKCfkvus37FSMTbuSI-Za9QV7Y4TERBf0o3L3Dab8EKAPumTFBhmYm41cfgU0J23rPyNG2XvGcUkFRSrzFNgU88fOcnCarcl4Kk5DTVjnVgyJ6dGz0BE~vwy~5Tvz2425SC0wFdI24kxmU1QtS9vdJR5pdYIzI85MCBQjXM4sBrMfqg9PIt9iCG3nbUq8zcrtmKA4ghcGCWjvlUQNhYMECbmJGzNY959SFKlSyQU2~cUwKmKUh8QZF6YzGujiYadtsNjeomhX9ZMUzR9jHShRdTgPc64vZ2Q__",
-    title: "Fruit Game",
-    description: "An interactive Fruit Game.",
+    image: todoList,
+    title: "Todo List",
+    description: "A simple and efficient Todo List application to help users organize daily tasks and stay productive. It supports adding, editing, deleting, and marking tasks as completed. Designed with a clean UI and responsive layout for all devices.",
     technologies: "React.js",
+    link: "https://nxtwave-task.vercel.app/",
   },
 ];
 
@@ -48,7 +53,7 @@ const LatestProject = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextProject();
-    }, 5000);
+    }, 9000);
     return () => clearInterval(interval);
   }, [currentProject]);
 
@@ -63,43 +68,65 @@ const LatestProject = () => {
   return (
     <section className="bg-black min-h-screen text-white py-12 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+        {/* Section Heading */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">
           Latest <span className="text-green-500">Projects</span>
         </h2>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="text-center md:text-left">
+        {/* Project Display Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-12 items-center">
+          {/* Project Content */}
+          <div className="space-y-4 text-center lg:text-left">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
               {String(currentProject + 1).padStart(2, "0")}
             </h3>
-            <h4 className="text-lg sm:text-xl md:text-2xl font-bold mt-2">
+
+            <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-green-400">
               {projects[currentProject].title}
             </h4>
-            <p className="text-gray-400 mt-4 text-sm sm:text-base">
+
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               {projects[currentProject].description}
             </p>
-            <p className="mt-2 text-green-400 text-sm sm:text-base">
+
+            <p className="text-green-400 text-sm sm:text-base">
               {projects[currentProject].technologies}
+            </p>
+
+            <p className="text-white text-sm sm:text-base">
+              Project Link:{" "}
+              <a
+                href={projects[currentProject].link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-green-500 hover:text-white transition"
+              >
+                {projects[currentProject].link}
+              </a>
             </p>
           </div>
 
+          {/* Project Image with Navigation */}
           <div className="relative w-full max-w-lg mx-auto">
-            <div className="overflow-hidden relative rounded-lg shadow-lg">
+            <div className="overflow-hidden relative rounded-lg shadow-lg h-64 sm:h-72 md:h-80">
               <img
                 src={projects[currentProject].image}
                 alt={`Project ${currentProject + 1}`}
-                className="w-full h-auto object-cover rounded-lg transition-all duration-500"
+                className="w-full h-full object-cover rounded-lg transition-all duration-500"
               />
             </div>
 
+            {/* Prev Button */}
             <button
-              className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-60 p-2 sm:p-3 rounded-full hover:bg-green-500 transition shadow-lg"
+              className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-60 p-2 sm:p-3 rounded-full hover:bg-green-500 transition shadow-lg cursor-pointer"
               onClick={prevProject}
             >
               <ChevronLeft className="text-white w-5 h-5 sm:w-6 sm:h-6" />
             </button>
+
+            {/* Next Button */}
             <button
-              className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-60 p-2 sm:p-3 rounded-full hover:bg-green-500 transition shadow-lg"
+              className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-60 p-2 sm:p-3 rounded-full hover:bg-green-500 transition shadow-lg cursor-pointer"
               onClick={nextProject}
             >
               <ChevronRight className="text-white w-5 h-5 sm:w-6 sm:h-6" />
